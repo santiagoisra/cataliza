@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+
+const stats = [
+  { number: "100+", label: "Proyectos Exitosos", delay: 0.3 },
+  { number: "95%", label: "Clientes Satisfechos", delay: 0.4 },
+  { number: "50%", label: "Menos Tiempo", delay: 0.5 },
+  { number: "24/7", label: "Soporte Dedicado", delay: 0.6 }
+];
 
 const Hero = () => {
+  const router = useRouter();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Gradient background */}
@@ -35,6 +45,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+              onClick={() => router.push('/contacto')}
             >
               Comenzar Proyecto
             </motion.button>
@@ -42,6 +53,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-white/10 text-white font-semibold rounded-lg backdrop-blur-sm hover:bg-white/20"
+              onClick={() => router.push('/servicios')}
             >
               Conocer Más
             </motion.button>
@@ -49,26 +61,50 @@ const Hero = () => {
         </motion.div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {[
-            { number: "100+", label: "Proyectos Exitosos" },
-            { number: "95%", label: "Clientes Satisfechos" },
-            { number: "50%", label: "Menos Tiempo" },
-            { number: "24/7", label: "Soporte Dedicado" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                {stat.number}
-              </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
-            </div>
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: stat.delay }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
+              
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative bg-gray-900/50 backdrop-blur-sm border border-orange-500/20 rounded-2xl p-6 transition-all duration-300 group-hover:border-orange-500/40"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: stat.delay + 0.2 
+                  }}
+                  className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2"
+                >
+                  {stat.number}
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: stat.delay + 0.4 }}
+                  className="text-sm text-gray-400"
+                >
+                  {stat.label}
+                </motion.div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -inset-px bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-orange-500/50 to-red-500/50 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300" />
+              </motion.div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
