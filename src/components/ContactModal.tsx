@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContactModalProps {
@@ -9,6 +9,7 @@ interface ContactModalProps {
 }
 
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+  const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     nombre: '',
     email: '',
@@ -16,6 +17,9 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     empresa: '',
     telefono: ''
   });
+  const [enviando, setEnviando] = useState(false);
+  const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState('');
 
   // Cerrar el modal con la tecla Escape
   useEffect(() => {
@@ -43,19 +47,43 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log('Formulario enviado:', formState);
-    // Resetear formulario y cerrar modal
-    setFormState({
-      nombre: '',
-      email: '',
-      mensaje: '',
-      empresa: '',
-      telefono: ''
-    });
-    onClose();
+    setEnviando(true);
+    setError('');
+
+    try {
+      // Simulación de envío de formulario
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Aquí iría la lógica real para enviar el formulario
+      // Por ejemplo, enviar los datos a un endpoint de API o un servicio de formularios
+      console.log('Formulario enviado:', formState);
+
+      // Mostrar mensaje de éxito
+      setEnviado(true);
+
+      // Limpiar el formulario
+      setFormState({
+        nombre: '',
+        email: '',
+        mensaje: '',
+        empresa: '',
+        telefono: ''
+      });
+
+      // Cerrar el modal después de 3 segundos para mostrar el mensaje de éxito
+      setTimeout(() => {
+        onClose();
+        // Resetear el estado de enviado después de cerrar
+        setTimeout(() => setEnviado(false), 500);
+      }, 3000);
+    } catch (err: any) {
+      console.error('Error al enviar el formulario:', err);
+      setError('Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
@@ -257,7 +285,21 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Contactanos:</h3>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                {enviado && (
+                  <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
+                    <p className="text-green-400 text-center">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
+                    <p className="text-red-400 text-center">{error}</p>
+                  </div>
+                )}
+
+                <form action="https://formspree.io/f/xpwdqblp" method="POST" className="space-y-4">
+                  <input type="hidden" name="_subject" value="Nuevo mensaje desde el modal de contacto de Cataliza" />
+                  <input type="hidden" name="_next" value="https://cataliza.ar/gracias" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-400 mb-1">
@@ -265,6 +307,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                         value={formState.nombre}
                         onChange={(e) => setFormState({...formState, nombre: e.target.value})}
@@ -278,6 +321,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                         value={formState.email}
                         onChange={(e) => setFormState({...formState, email: e.target.value})}
@@ -293,6 +337,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       </label>
                       <input
                         type="text"
+                        name="company"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                         value={formState.empresa}
                         onChange={(e) => setFormState({...formState, empresa: e.target.value})}
@@ -305,6 +350,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       </label>
                       <input
                         type="tel"
+                        name="phone"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                         value={formState.telefono}
                         onChange={(e) => setFormState({...formState, telefono: e.target.value})}
@@ -318,6 +364,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </label>
                     <textarea
                       rows={4}
+                      name="message"
                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                       value={formState.mensaje}
                       onChange={(e) => setFormState({...formState, mensaje: e.target.value})}

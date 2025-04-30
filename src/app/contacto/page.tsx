@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 
 const infoContacto = [
@@ -20,6 +20,7 @@ const infoContacto = [
 ];
 
 export default function Contacto() {
+  const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     nombre: '',
     email: '',
@@ -28,14 +29,43 @@ export default function Contacto() {
   });
 
   const [enviando, setEnviando] = useState(false);
+  const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEnviando(true);
-    // Simular envío
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log('Formulario enviado:', formState);
-    setEnviando(false);
+    setError('');
+
+    try {
+      // Simulación de envío de formulario
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Aquí iría la lógica real para enviar el formulario
+      // Por ejemplo, enviar los datos a un endpoint de API o un servicio de formularios
+      console.log('Formulario enviado:', formState);
+
+      // Mostrar mensaje de éxito
+      setEnviado(true);
+
+      // Limpiar el formulario
+      setFormState({
+        nombre: '',
+        email: '',
+        empresa: '',
+        mensaje: ''
+      });
+
+      // Después de 3 segundos, ocultar el mensaje de éxito
+      setTimeout(() => {
+        setEnviado(false);
+      }, 3000);
+    } catch (err: any) {
+      console.error('Error al enviar el formulario:', err);
+      setError('Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
@@ -45,8 +75,8 @@ export default function Contacto() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,15 +87,13 @@ export default function Contacto() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              ¿Querés tener tu
+              Contanos en qué estás y
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                {" "}propio equipo de producto
+                {" "}vemos cómo podemos ayudarte
               </span>
-              ?
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Contanos en qué estás y vemos cómo podemos ayudarte. Nuestro equipo está listo
-              para sumarse al tuyo y construir algo grande.
+              Nuestro equipo está listo para sumarse al tuyo y construir algo grande.
             </p>
           </motion.div>
         </div>
@@ -99,7 +127,7 @@ export default function Contacto() {
       {/* Formulario de Contacto */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-black to-black"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,7 +138,22 @@ export default function Contacto() {
             className="bg-gray-900/50 p-8 sm:p-12 rounded-2xl border border-gray-800 backdrop-blur-sm"
           >
             <h2 className="text-2xl font-bold text-white mb-6 text-center">O completá el formulario y te escribimos:</h2>
-            <form onSubmit={handleSubmit} className="space-y-8">
+
+            {enviado && (
+              <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
+                <p className="text-green-400 text-center">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
+                <p className="text-red-400 text-center">{error}</p>
+              </div>
+            )}
+
+            <form action="https://formspree.io/f/xpwdqblp" method="POST" className="space-y-8">
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde la página de contacto de Cataliza" />
+              <input type="hidden" name="_next" value="https://cataliza.ar/gracias" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -122,6 +165,7 @@ export default function Contacto() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                     value={formState.nombre}
@@ -139,6 +183,7 @@ export default function Contacto() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                     value={formState.email}
@@ -158,6 +203,7 @@ export default function Contacto() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                     value={formState.empresa}
                     onChange={(e) => setFormState({...formState, empresa: e.target.value})}
@@ -175,6 +221,7 @@ export default function Contacto() {
                 </label>
                 <textarea
                   required
+                  name="message"
                   rows={6}
                   className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
                   value={formState.mensaje}
@@ -186,18 +233,9 @@ export default function Contacto() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={enviando}
-                className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
               >
-                {enviando ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Enviando...
-                  </span>
-                ) : "Enviar mensaje"}
+                Enviar mensaje
               </motion.button>
             </form>
           </motion.div>

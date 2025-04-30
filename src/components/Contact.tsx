@@ -36,15 +36,15 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              ¿Listo para transformar
+              ¿Querés tener tu
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                {" "}tus ideas{" "}
+                {" "}propio equipo de producto{" "}
               </span>
-              en realidad?
+              ?
             </h2>
             <p className="text-gray-400 mb-8">
-              Contáctanos hoy mismo para comenzar a trabajar en tu próximo proyecto digital.
-              Nuestro equipo está listo para ayudarte a alcanzar tus objetivos.
+              Contanos en qué estás y vemos cómo podemos ayudarte. Nuestro equipo está listo
+              para sumarse al tuyo y construir algo grande.
             </p>
 
             <div className="space-y-6">
@@ -54,7 +54,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">Email</h3>
-                  <p className="text-gray-400">contacto@cataliza.dev</p>
+                  <p className="text-gray-400">contacto@cataliza.ar</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold">Teléfono</h3>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-400">+54 (381) 535-9505</p>
                 </div>
               </div>
             </div>
@@ -78,7 +78,9 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="bg-gray-900/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-800"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action="https://formspree.io/f/xpwdqblp" method="POST" className="space-y-6">
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde la página de inicio de Cataliza" />
+              <input type="hidden" name="_next" value="https://cataliza.ar/gracias" />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
                   Nombre completo
@@ -154,4 +156,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
