@@ -1,9 +1,17 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  company?: string;
+  message: string;
+  service?: string;
+}
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await request.json() as ContactFormData;
     const { name, email, company, message, service } = body;
 
     // Configurar el transporte de correo
@@ -40,11 +48,12 @@ export async function POST(request: Request) {
       { message: 'Mensaje enviado correctamente' },
       { status: 200 }
     );
-  } catch (error) {
-    console.error('Error al enviar el mensaje:', error);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+    console.error('Error al enviar el mensaje:', errorMessage);
     return NextResponse.json(
       { message: 'Error al enviar el mensaje' },
       { status: 500 }
     );
   }
-} 
+}
