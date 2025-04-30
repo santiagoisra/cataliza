@@ -29,15 +29,20 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Transformamos Ideas en
+            Tu producto,
             <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-              {" "}Productos Digitales
+              {" "}nuestro equipo.
             </span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Acompañamos a organizaciones en el desarrollo de productos digitales innovadores,
-            desde la concepción hasta la implementación.
+            En Cataliza acompañamos a empresas y organizaciones en la creación de productos digitales,
+            como si fuéramos parte de su equipo. Diseñamos, planificamos y construimos de forma colaborativa,
+            sumándonos desde afuera... pero trabajando desde adentro.
+          </p>
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Ya sea que estés empezando una idea o escalando una solución, nuestro equipo está para
+            ayudarte a avanzar con claridad, foco y visión de producto.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -71,7 +76,7 @@ const Hero = () => {
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
-              
+
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="relative bg-gray-900/50 backdrop-blur-sm border border-orange-500/20 rounded-2xl p-6 transition-all duration-300 group-hover:border-orange-500/40"
@@ -79,11 +84,11 @@ const Hero = () => {
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 260,
                     damping: 20,
-                    delay: stat.delay + 0.2 
+                    delay: stat.delay + 0.2
                   }}
                   className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2"
                 >
@@ -97,7 +102,7 @@ const Hero = () => {
                 >
                   {stat.label}
                 </motion.div>
-                
+
                 {/* Decorative elements */}
                 <div className="absolute -inset-px bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute -inset-0.5 bg-gradient-to-br from-orange-500/50 to-red-500/50 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300" />
@@ -110,4 +115,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
