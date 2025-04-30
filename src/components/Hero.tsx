@@ -14,7 +14,7 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16 md:pt-0">
       {/* Gradient background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 sm:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
