@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 
 const infoContacto = [
@@ -20,7 +20,7 @@ const infoContacto = [
 ];
 
 export default function Contacto() {
-  const form = useRef<HTMLFormElement>(null);
+  // Estado del formulario
   const [formState, setFormState] = useState({
     nombre: '',
     email: '',
@@ -28,45 +28,9 @@ export default function Contacto() {
     mensaje: ''
   });
 
-  const [enviando, setEnviando] = useState(false);
-  const [enviado, setEnviado] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setEnviando(true);
-    setError('');
-
-    try {
-      // Simulación de envío de formulario
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      // Aquí iría la lógica real para enviar el formulario
-      // Por ejemplo, enviar los datos a un endpoint de API o un servicio de formularios
-      console.log('Formulario enviado:', formState);
-
-      // Mostrar mensaje de éxito
-      setEnviado(true);
-
-      // Limpiar el formulario
-      setFormState({
-        nombre: '',
-        email: '',
-        empresa: '',
-        mensaje: ''
-      });
-
-      // Después de 3 segundos, ocultar el mensaje de éxito
-      setTimeout(() => {
-        setEnviado(false);
-      }, 3000);
-    } catch (err: any) {
-      console.error('Error al enviar el formulario:', err);
-      setError('Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
-    } finally {
-      setEnviando(false);
-    }
-  };
+  // Estado para mensajes y errores
+  const [enviado] = useState(false);
+  const [error] = useState('');
 
   return (
     <main className="bg-black min-h-screen">

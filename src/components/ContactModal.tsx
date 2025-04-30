@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContactModalProps {
@@ -9,7 +9,6 @@ interface ContactModalProps {
 }
 
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
-  const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     nombre: '',
     email: '',
@@ -17,9 +16,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     empresa: '',
     telefono: ''
   });
-  const [enviando, setEnviando] = useState(false);
-  const [enviado, setEnviado] = useState(false);
-  const [error, setError] = useState('');
+  const [enviado] = useState(false);
+  const [error] = useState('');
 
   // Cerrar el modal con la tecla Escape
   useEffect(() => {
@@ -47,44 +45,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setEnviando(true);
-    setError('');
-
-    try {
-      // Simulación de envío de formulario
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      // Aquí iría la lógica real para enviar el formulario
-      // Por ejemplo, enviar los datos a un endpoint de API o un servicio de formularios
-      console.log('Formulario enviado:', formState);
-
-      // Mostrar mensaje de éxito
-      setEnviado(true);
-
-      // Limpiar el formulario
-      setFormState({
-        nombre: '',
-        email: '',
-        mensaje: '',
-        empresa: '',
-        telefono: ''
-      });
-
-      // Cerrar el modal después de 3 segundos para mostrar el mensaje de éxito
-      setTimeout(() => {
-        onClose();
-        // Resetear el estado de enviado después de cerrar
-        setTimeout(() => setEnviado(false), 500);
-      }, 3000);
-    } catch (err: any) {
-      console.error('Error al enviar el formulario:', err);
-      setError('Hubo un error al enviar el formulario. Por favor, intenta nuevamente.');
-    } finally {
-      setEnviando(false);
-    }
-  };
+  // Nota: El formulario se maneja directamente a través de Formspree
 
   return (
     <AnimatePresence>
