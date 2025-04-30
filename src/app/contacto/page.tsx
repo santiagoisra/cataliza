@@ -6,43 +6,16 @@ import Navbar from '@/components/Navbar';
 
 const infoContacto = [
   {
-    titulo: "Oficina Principal",
-    descripcion: "Buenos Aires, Argentina",
-    icono: "🏢",
+    titulo: "Email",
+    descripcion: "contacto@cataliza.ar",
+    icono: "📧",
     color: "from-orange-500 to-red-500"
   },
   {
-    titulo: "Email",
-    descripcion: "contacto@cataliza.dev",
-    icono: "📧",
-    color: "from-red-500 to-orange-600"
-  },
-  {
     titulo: "Teléfono",
-    descripcion: "+54 (11) 1234-5678",
+    descripcion: "+54 (381) 535-9505",
     icono: "📱",
-    color: "from-orange-600 to-red-600"
-  }
-];
-
-const redesSociales = [
-  {
-    nombre: "LinkedIn",
-    url: "#",
-    icono: "💼",
-    color: "from-blue-500 to-blue-600"
-  },
-  {
-    nombre: "Twitter",
-    url: "#",
-    icono: "🐦",
-    color: "from-sky-400 to-sky-500"
-  },
-  {
-    nombre: "Instagram",
-    url: "#",
-    icono: "📸",
-    color: "from-pink-500 to-purple-500"
+    color: "from-red-500 to-orange-600"
   }
 ];
 
@@ -51,7 +24,6 @@ export default function Contacto() {
     nombre: '',
     email: '',
     empresa: '',
-    servicio: '',
     mensaje: ''
   });
 
@@ -69,14 +41,14 @@ export default function Contacto() {
   return (
     <main className="bg-black min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,14 +57,15 @@ export default function Contacto() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Conecta con
+              ¿Querés tener tu
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                {" "}Nosotros
+                {" "}propio equipo de producto
               </span>
+              ?
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Estamos aquí para ayudarte a transformar tus ideas en realidad.
-              ¿Conversamos?
+              Contanos en qué estás y vemos cómo podemos ayudarte. Nuestro equipo está listo
+              para sumarse al tuyo y construir algo grande.
             </p>
           </motion.div>
         </div>
@@ -100,8 +73,8 @@ export default function Contacto() {
 
       {/* Información de Contacto */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {infoContacto.map((info, index) => (
               <motion.div
                 key={index}
@@ -128,7 +101,7 @@ export default function Contacto() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-black to-black" />
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -136,6 +109,7 @@ export default function Contacto() {
             viewport={{ once: true }}
             className="bg-gray-900/50 p-8 sm:p-12 rounded-2xl border border-gray-800 backdrop-blur-sm"
           >
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">O completá el formulario y te escribimos:</h2>
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <motion.div
@@ -189,26 +163,6 @@ export default function Contacto() {
                     onChange={(e) => setFormState({...formState, empresa: e.target.value})}
                   />
                 </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <label className="block text-sm font-medium text-gray-400 mb-2">
-                    Servicio de interés
-                  </label>
-                  <select
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
-                    value={formState.servicio}
-                    onChange={(e) => setFormState({...formState, servicio: e.target.value})}
-                  >
-                    <option value="">Selecciona un servicio</option>
-                    <option value="consultoria">Consultoría Estratégica</option>
-                    <option value="diseno">Diseño UX/UI</option>
-                    <option value="desarrollo">Desarrollo de Productos</option>
-                  </select>
-                </motion.div>
               </div>
 
               <motion.div
@@ -249,39 +203,6 @@ export default function Contacto() {
           </motion.div>
         </div>
       </section>
-
-      {/* Redes Sociales */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-white mb-12"
-          >
-            Síguenos en redes sociales
-          </motion.h2>
-          
-          <div className="flex justify-center space-x-8">
-            {redesSociales.map((red, index) => (
-              <motion.a
-                key={index}
-                href={red.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.2 }}
-                className={`w-16 h-16 rounded-full bg-gradient-to-br ${red.color} flex items-center justify-center text-3xl shadow-lg`}
-              >
-                {red.icono}
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
-} 
+}

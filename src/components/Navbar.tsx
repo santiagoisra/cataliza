@@ -16,14 +16,14 @@ const Navbar = () => {
               CATALIZA
             </Link>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <NavLink href="/">Inicio</NavLink>
               <NavLink href="/servicios">Servicios</NavLink>
               <NavLink href="/proceso">Proceso</NavLink>
-              <NavLink href="/contacto">Contacto</NavLink>
+              <NavLinkCTA href="/contacto">Contacto</NavLinkCTA>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
           <MobileNavLink href="/">Inicio</MobileNavLink>
           <MobileNavLink href="/servicios">Servicios</MobileNavLink>
           <MobileNavLink href="/proceso">Proceso</MobileNavLink>
-          <MobileNavLink href="/contacto">Contacto</MobileNavLink>
+          <MobileNavLinkCTA href="/contacto">Contacto</MobileNavLinkCTA>
         </div>
       </motion.div>
     </nav>
@@ -87,4 +87,22 @@ const MobileNavLink = ({ href, children }: { href: string; children: React.React
   </Link>
 );
 
-export default Navbar; 
+const NavLinkCTA = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <Link
+    href={href}
+    className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:shadow-lg hover:shadow-orange-500/20 transition-all"
+  >
+    {children}
+  </Link>
+);
+
+const MobileNavLinkCTA = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <Link
+    href={href}
+    className="bg-gradient-to-r from-orange-500 to-red-500 text-white block px-3 py-2 rounded-md text-base font-medium hover:shadow-lg hover:shadow-orange-500/20 transition-all"
+  >
+    {children}
+  </Link>
+);
+
+export default Navbar;
