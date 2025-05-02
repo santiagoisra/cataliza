@@ -144,7 +144,7 @@ export default function Servicios() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Todo lo que necesitás para lanzar o hacer crecer tu producto.
+              Todo lo que necesitás para lanzar o hacer crecer tu producto digital.
             </p>
           </motion.div>
         </div>
@@ -167,7 +167,7 @@ export default function Servicios() {
           >
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                Nuestro enfoque <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">colaborativo</span>
+                Nuestro enfoque <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">colaborativo</span> para el desarrollo de productos
               </h2>
             </div>
 

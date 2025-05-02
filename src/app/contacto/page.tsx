@@ -51,13 +51,13 @@ export default function Contacto() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Contanos en qué estás y
+              Contacta con nuestro equipo de
               <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
-                {" "}vemos cómo podemos ayudarte
+                {" "}desarrollo de productos
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Nuestro equipo está listo para sumarse al tuyo y construir algo grande.
+              Nuestro equipo está listo para sumarse al tuyo y construir productos digitales innovadores.
             </p>
           </motion.div>
         </div>
@@ -66,6 +66,7 @@ export default function Contacto() {
       {/* Información de Contacto */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Información de Contacto</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {infoContacto.map((info, index) => (
               <motion.div
@@ -101,7 +102,8 @@ export default function Contacto() {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-cataliza-bg/40 to-cataliza-bg/20 p-8 sm:p-12 rounded-2xl border border-cataliza-primary/20 backdrop-blur-sm"
           >
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">O completá el formulario y te escribimos:</h2>
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Formulario de Contacto</h2>
+            <p className="text-gray-300 text-center mb-8">Completa el formulario y nos pondremos en contacto contigo para discutir tu proyecto digital.</p>
 
             {enviado && (
               <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">

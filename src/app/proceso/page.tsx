@@ -139,14 +139,14 @@ export default function Proceso() {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Nuestro
               <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
-                {" "}Proceso
+                {" "}Proceso de Desarrollo
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Un equipo completo de producto, sin tener que armarlo.
+              Un equipo completo de producto digital, sin tener que armarlo internamente.
             </p>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mt-4">
-              Nos adaptamos a tu ritmo, pero seguimos un proceso claro que nos permite avanzar con foco y resultados reales.
+              Nos adaptamos a tu ritmo, pero seguimos un proceso claro que nos permite avanzar con foco y resultados medibles.
             </p>
           </motion.div>
         </div>
@@ -155,6 +155,7 @@ export default function Proceso() {
       {/* Proceso Timeline */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">Metodología de Desarrollo en 6 Fases</h2>
           {procesoDetallado.map((fase, index) => (
             <motion.div
               key={index}
@@ -178,7 +179,7 @@ export default function Proceso() {
                         {fase.fase}
                       </div>
                       <div>
-                        <h2 className="text-3xl font-bold text-white">{fase.titulo}</h2>
+                        <h3 className="text-3xl font-bold text-white">{fase.titulo}</h3>
                       </div>
                     </div>
 

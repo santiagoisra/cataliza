@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cataliza.ar/sitemap.xml
+
+# Disallow thank you page
+Disallow: /gracias
