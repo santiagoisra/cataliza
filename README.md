@@ -1,4 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cataliza - Sitio Web
+
+Este es el sitio web oficial de Cataliza, una empresa especializada en el desarrollo de productos digitales.
+
+## Paleta de Colores
+
+### Paleta Actual (Azul)
+- **Fondo**: `#191d23` (versión ligeramente más oscura de #1c2026)
+- **Color principal**: `#4a87c0`
+- **Color secundario**: `#2f5385`
+
+Estos colores se implementan usando clases personalizadas de Tailwind:
+```jsx
+className="bg-cataliza-bg"
+className="text-cataliza-primary"
+className="border-cataliza-secondary"
+```
+
+Para gradientes:
+```jsx
+className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary"
+```
+
+Definidos en `tailwind.config.js`:
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'cataliza-bg': '#191d23',
+        'cataliza-primary': '#4a87c0',
+        'cataliza-secondary': '#2f5385',
+      },
+    },
+  },
+};
+```
+
+### Paleta Original (Naranja/Rojo)
+Si en algún momento se desea volver a la paleta original, estos son los colores:
+- **Fondo**: `black`
+- **Color principal**: `orange-500` (equivalente a #f97316 en Tailwind)
+- **Color secundario**: `red-500` (equivalente a #ef4444 en Tailwind)
 
 ## Getting Started
 

@@ -51,7 +51,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-cataliza-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -83,7 +83,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-gray-800 hover:border-orange-500/50 transition-colors"
+              className="bg-gradient-to-br from-gray-900 to-cataliza-bg p-6 rounded-xl border border-gray-800 hover:border-cataliza-primary/50 transition-colors"
             >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
@@ -91,7 +91,7 @@ const Services = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="text-gray-500 flex items-center">
-                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></span>
+                    <span className="w-1.5 h-1.5 bg-cataliza-primary rounded-full mr-2"></span>
                     {feature}
                   </li>
                 ))}
@@ -104,4 +104,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;

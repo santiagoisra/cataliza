@@ -66,7 +66,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative bg-gradient-to-br from-gray-900 to-black border border-orange-500/20 rounded-2xl shadow-xl shadow-orange-500/5 w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            className="relative bg-gradient-to-br from-gray-900 to-cataliza-bg border border-cataliza-primary/20 rounded-2xl shadow-xl shadow-cataliza-primary/5 w-full max-w-4xl max-h-[90vh] overflow-y-auto"
           >
             {/* Botón de cerrar */}
             <button
@@ -83,7 +83,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             <div className="p-6 sm:p-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
                 Comencemos a trabajar
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                   {" "}juntos
                 </span>
               </h2>
@@ -95,7 +95,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 {/* Versión de escritorio - visible solo en pantallas medianas y grandes */}
                 <div className="relative hidden md:block">
                   {/* Línea vertical central */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-orange-500 to-red-500"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary"></div>
 
                   {/* Paso 1 */}
                   <div className="relative flex items-center mb-16">
@@ -105,7 +105,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">1</div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">1</div>
 
                     {/* Contenido derecho */}
                     <div className="w-1/2 pl-8">
@@ -121,7 +121,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">2</div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">2</div>
 
                     {/* Contenido derecho (invertido) */}
                     <div className="w-1/2 pl-8">
@@ -137,7 +137,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">3</div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">3</div>
 
                     {/* Contenido derecho */}
                     <div className="w-1/2 pl-8">
@@ -153,7 +153,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">4</div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">4</div>
 
                     {/* Contenido derecho (invertido) */}
                     <div className="w-1/2 pl-8">
@@ -166,12 +166,12 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 <div className="md:hidden">
                   <div className="relative">
                     {/* Línea vertical izquierda */}
-                    <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-orange-500 to-red-500"></div>
+                    <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary"></div>
 
                     {/* Paso 1 */}
                     <div className="relative pl-16 pb-10">
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">1</div>
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">1</div>
                       <h4 className="text-white font-semibold text-lg mb-2">Contacto inicial</h4>
                       <p className="text-gray-400">Completá el formulario y contanos sobre tu proyecto o idea. Nos pondremos en contacto contigo rápidamente.</p>
                     </div>
@@ -179,7 +179,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     {/* Paso 2 */}
                     <div className="relative pl-16 pb-10">
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">2</div>
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">2</div>
                       <h4 className="text-white font-semibold text-lg mb-2">Reunión de descubrimiento</h4>
                       <p className="text-gray-400">Agendamos una reunión para entender en profundidad tus necesidades, objetivos y expectativas.</p>
                     </div>
@@ -187,7 +187,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     {/* Paso 3 */}
                     <div className="relative pl-16 pb-10">
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">3</div>
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">3</div>
                       <h4 className="text-white font-semibold text-lg mb-2">Propuesta personalizada</h4>
                       <p className="text-gray-400">Desarrollamos una propuesta adaptada a tus necesidades específicas con un plan de trabajo claro.</p>
                     </div>
@@ -195,7 +195,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     {/* Paso 4 */}
                     <div className="relative pl-16">
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-orange-500/20">4</div>
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">4</div>
                       <h4 className="text-white font-semibold text-lg mb-2">Comenzamos a trabajar</h4>
                       <p className="text-gray-400">Nos integramos a tu equipo y comenzamos a ejecutar el plan, con comunicación constante y entregas regulares.</p>
                     </div>
@@ -208,15 +208,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 <h3 className="text-xl font-semibold text-white mb-4">Nuestro equipo:</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-black/30 p-4 rounded-xl border border-orange-500/20">
+                  <div className="bg-cataliza-bg/30 p-4 rounded-xl border border-cataliza-primary/20">
                     <div className="flex items-center gap-4 mb-3">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 overflow-hidden flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center">
                         {/* Placeholder para la foto - reemplazar con Image cuando tengas las imágenes */}
                         <span className="text-2xl">👨‍💻</span>
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">Santiago Israelevich</h4>
-                        <p className="text-orange-400 text-sm">UX/UI Designer</p>
+                        <p className="text-cataliza-primary text-sm">UX/UI Designer</p>
                       </div>
                     </div>
                     <p className="text-gray-400 text-sm">
@@ -224,15 +224,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     </p>
                   </div>
 
-                  <div className="bg-black/30 p-4 rounded-xl border border-orange-500/20">
+                  <div className="bg-cataliza-bg/30 p-4 rounded-xl border border-cataliza-primary/20">
                     <div className="flex items-center gap-4 mb-3">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 overflow-hidden flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center">
                         {/* Placeholder para la foto - reemplazar con Image cuando tengas las imágenes */}
                         <span className="text-2xl">👨‍💻</span>
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">Nicolás Rivera</h4>
-                        <p className="text-orange-400 text-sm">Product & Development Lead</p>
+                        <p className="text-cataliza-primary text-sm">Product & Development Lead</p>
                       </div>
                     </div>
                     <p className="text-gray-400 text-sm">
@@ -269,7 +269,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="text"
                         name="name"
-                        className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                        className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.nombre}
                         onChange={(e) => setFormState({...formState, nombre: e.target.value})}
                         required
@@ -283,7 +283,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="email"
                         name="email"
-                        className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                        className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.email}
                         onChange={(e) => setFormState({...formState, email: e.target.value})}
                         required
@@ -299,7 +299,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="text"
                         name="company"
-                        className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                        className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.empresa}
                         onChange={(e) => setFormState({...formState, empresa: e.target.value})}
                       />
@@ -312,7 +312,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="tel"
                         name="phone"
-                        className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                        className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.telefono}
                         onChange={(e) => setFormState({...formState, telefono: e.target.value})}
                       />
@@ -326,7 +326,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     <textarea
                       rows={4}
                       name="message"
-                      className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                      className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                       value={formState.mensaje}
                       onChange={(e) => setFormState({...formState, mensaje: e.target.value})}
                       required
@@ -338,7 +338,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       type="submit"
-                      className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+                      className="px-8 py-3 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
                     >
                       Enviar mensaje
                     </motion.button>

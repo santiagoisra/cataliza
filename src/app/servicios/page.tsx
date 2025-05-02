@@ -120,14 +120,14 @@ import ContactModal from '@/components/ContactModal';
 export default function Servicios() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-cataliza-bg min-h-screen">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-0 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-cataliza-primary/20 via-cataliza-bg/80 to-cataliza-bg" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,135,192,0.15)_0%,rgba(0,0,0,0)_60%)]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,11 +135,11 @@ export default function Servicios() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center pb-20"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Servicios
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}Profesionales
               </span>
             </h1>
@@ -151,9 +151,10 @@ export default function Servicios() {
       </section>
 
       {/* Descripción de Enfoque */}
-      <section className="py-16 relative">
+      <section className="pt-0 pb-16 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-cataliza-bg/95 via-cataliza-bg/90 to-cataliza-bg" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,135,192,0.05)_0%,rgba(0,0,0,0)_70%)]" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -162,15 +163,12 @@ export default function Servicios() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="py-8"
+            className="pt-20 pb-8"
           >
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🤝</span>
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">Nuestro enfoque colaborativo</h2>
-              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Nuestro enfoque <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">colaborativo</span>
+              </h2>
             </div>
 
             <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -187,9 +185,9 @@ export default function Servicios() {
               <div className="md:w-1/2 space-y-4 self-center">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-sm border-l-4 border-orange-500"
+                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-cataliza-bg/40 to-cataliza-bg/20 backdrop-blur-sm border-l-4 border-cataliza-primary"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center flex-shrink-0">
                     <span className="text-xl">📋</span>
                   </div>
                   <div>
@@ -200,9 +198,9 @@ export default function Servicios() {
 
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-sm border-l-4 border-orange-500"
+                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-cataliza-bg/40 to-cataliza-bg/20 backdrop-blur-sm border-l-4 border-cataliza-primary"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center flex-shrink-0">
                     <span className="text-xl">🔄</span>
                   </div>
                   <div>
@@ -213,9 +211,9 @@ export default function Servicios() {
 
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-sm border-l-4 border-orange-500"
+                  className="flex items-center gap-4 p-3 rounded-lg bg-gradient-to-r from-cataliza-bg/40 to-cataliza-bg/20 backdrop-blur-sm border-l-4 border-cataliza-primary"
                 >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center flex-shrink-0">
                     <span className="text-xl">⭐</span>
                   </div>
                   <div>
@@ -263,7 +261,7 @@ export default function Servicios() {
                         transition={{ delay: idx * 0.2 }}
                         className="flex items-start space-x-4"
                       >
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center flex-shrink-0">
                           <span className="text-2xl">{caracteristica.icono}</span>
                         </div>
                         <div>
@@ -285,11 +283,11 @@ export default function Servicios() {
                     whileHover={{ scale: 1.05 }}
                     className="relative aspect-square rounded-2xl overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-black/80" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 to-cataliza-bg/80" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-[120px]">{servicio.icono}</div>
                     </div>
-                    <div className="absolute inset-0 border border-orange-500/20 rounded-2xl" />
+                    <div className="absolute inset-0 border border-cataliza-primary/20 rounded-2xl" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -301,7 +299,7 @@ export default function Servicios() {
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-t from-orange-500/20 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -313,7 +311,7 @@ export default function Servicios() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               ¿Listo para empezar tu
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}próximo proyecto
               </span>
               ?
@@ -325,7 +323,7 @@ export default function Servicios() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+              className="px-8 py-3 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
             >
               Contactar ahora
             </motion.button>

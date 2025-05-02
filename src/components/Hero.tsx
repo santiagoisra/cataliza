@@ -14,11 +14,11 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16 md:pt-0">
+    <section className="relative min-h-screen flex items-center justify-center bg-cataliza-bg overflow-hidden pt-16 md:pt-0">
       {/* Gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,135,192,0.1)_0%,rgba(0,0,0,0)_50%)]" />
       </div>
 
       {/* Content */}
@@ -30,7 +30,7 @@ const Hero = () => {
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
             Tu producto,
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
               {" "}nuestro equipo.
             </span>
           </h1>
@@ -49,7 +49,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+              className="px-8 py-3 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
               onClick={() => router.push('/contacto')}
             >
               Comenzar Proyecto
@@ -75,11 +75,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: stat.delay }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative bg-gray-900/50 backdrop-blur-sm border border-orange-500/20 rounded-2xl p-6 transition-all duration-300 group-hover:border-orange-500/40"
+                className="relative bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-2xl p-6 transition-all duration-300 group-hover:border-cataliza-primary/40"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -90,7 +90,7 @@ const Hero = () => {
                     damping: 20,
                     delay: stat.delay + 0.2
                   }}
-                  className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2"
+                  className="text-3xl font-bold bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent mb-2"
                 >
                   {stat.number}
                 </motion.div>
@@ -104,8 +104,8 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Decorative elements */}
-                <div className="absolute -inset-px bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-orange-500/50 to-red-500/50 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300" />
+                <div className="absolute -inset-px bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-cataliza-primary/50 to-cataliza-secondary/50 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300" />
               </motion.div>
             </motion.div>
           ))}

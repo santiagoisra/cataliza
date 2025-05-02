@@ -43,7 +43,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-cataliza-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -67,7 +67,7 @@ const Process = () => {
 
         <div className="relative">
           {/* Line connector */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-orange-500/50 to-transparent" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cataliza-primary/50 to-transparent" />
 
           <div className="space-y-12">
             {steps.map((step, index) => (
@@ -86,9 +86,9 @@ const Process = () => {
                   <p className="text-gray-400">{step.description}</p>
                 </div>
 
-                <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-500 shadow-lg">
+                <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary shadow-lg">
                   <span className="text-2xl">{step.icon}</span>
-                  <div className="absolute w-20 h-20 rounded-full border border-orange-500/30 animate-ping" />
+                  <div className="absolute w-20 h-20 rounded-full border border-cataliza-primary/30 animate-ping" />
                 </div>
 
                 <div className="flex-1" />
@@ -101,4 +101,4 @@ const Process = () => {
   );
 };
 
-export default Process; 
+export default Process;

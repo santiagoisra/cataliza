@@ -11,7 +11,7 @@ const procesoDetallado = [
     titulo: "Descubrimiento",
     descripcion: "Entendemos tu negocio y definimos objetivos compartidos.",
     icono: "🔍",
-    color: "from-orange-500 to-red-500",
+    color: "from-cataliza-primary to-cataliza-secondary",
     actividades: [
       "Inmersión en tu modelo de negocio",
       "Análisis de competidores y mercado",
@@ -29,7 +29,7 @@ const procesoDetallado = [
     titulo: "Planificación",
     descripcion: "Organizamos el trabajo con visión estratégica.",
     icono: "📋",
-    color: "from-red-500 to-orange-600",
+    color: "from-cataliza-secondary to-cataliza-primary",
     actividades: [
       "Definición de alcance y prioridades",
       "Creación de roadmap de producto",
@@ -47,7 +47,7 @@ const procesoDetallado = [
     titulo: "Diseño",
     descripcion: "Pensamos en la experiencia del usuario, sin perder de vista el negocio.",
     icono: "🎨",
-    color: "from-orange-600 to-red-600",
+    color: "from-cataliza-primary to-cataliza-secondary",
     actividades: [
       "Arquitectura de información",
       "Diseño de flujos de usuario",
@@ -65,7 +65,7 @@ const procesoDetallado = [
     titulo: "Desarrollo",
     descripcion: "Coordinamos con tu equipo o partners técnicos, o los ponemos nosotros.",
     icono: "💻",
-    color: "from-red-600 to-orange-500",
+    color: "from-cataliza-secondary to-cataliza-primary",
     actividades: [
       "Integración con equipos existentes",
       "Desarrollo ágil y adaptativo",
@@ -83,7 +83,7 @@ const procesoDetallado = [
     titulo: "Pruebas",
     descripcion: "Validamos con usuarios reales y ajustamos rápido.",
     icono: "🧪",
-    color: "from-orange-500 to-red-500",
+    color: "from-cataliza-primary to-cataliza-secondary",
     actividades: [
       "Testing con usuarios objetivo",
       "Análisis de feedback cualitativo",
@@ -101,7 +101,7 @@ const procesoDetallado = [
     titulo: "Lanzamiento",
     descripcion: "Acompañamos la salida y lo que venga después.",
     icono: "🚀",
-    color: "from-red-500 to-orange-600",
+    color: "from-cataliza-secondary to-cataliza-primary",
     actividades: [
       "Estrategia de lanzamiento",
       "Monitoreo de métricas post-lanzamiento",
@@ -119,14 +119,14 @@ const procesoDetallado = [
 export default function Proceso() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-cataliza-bg min-h-screen">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,135,192,0.1)_0%,rgba(0,0,0,0)_50%)]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,7 +138,7 @@ export default function Proceso() {
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Nuestro
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}Proceso
               </span>
             </h1>
@@ -189,24 +189,48 @@ export default function Proceso() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="bg-gray-900/50 p-4 rounded-xl border border-gray-800"
+                        className="relative group"
                       >
-                        <div className="text-sm text-gray-400">Duración</div>
-                        <div className="text-white font-semibold">{fase.metricas.tiempo}</div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
+                        <div className="relative bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-2xl p-4 transition-all duration-300 group-hover:border-cataliza-primary/40 h-28 flex flex-col justify-center">
+                          <div className="text-sm text-white mb-1">
+                            Duración
+                          </div>
+                          <div className="text-base font-bold text-white">
+                            {fase.metricas.tiempo}
+                          </div>
+                          <div className="absolute -inset-px bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="bg-gray-900/50 p-4 rounded-xl border border-gray-800"
+                        className="relative group"
                       >
-                        <div className="text-sm text-gray-400">Entregables</div>
-                        <div className="text-white font-semibold">{fase.metricas.entregables}</div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
+                        <div className="relative bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-2xl p-4 transition-all duration-300 group-hover:border-cataliza-primary/40 h-28 flex flex-col justify-center">
+                          <div className="text-sm text-white mb-1">
+                            Entregables
+                          </div>
+                          <div className="text-base font-bold text-white">
+                            {fase.metricas.entregables}
+                          </div>
+                          <div className="absolute -inset-px bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="bg-gray-900/50 p-4 rounded-xl border border-gray-800"
+                        className="relative group"
                       >
-                        <div className="text-sm text-gray-400">Reuniones</div>
-                        <div className="text-white font-semibold">{fase.metricas.reuniones}</div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-75" />
+                        <div className="relative bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-2xl p-4 transition-all duration-300 group-hover:border-cataliza-primary/40 h-28 flex flex-col justify-center">
+                          <div className="text-sm text-white mb-1">
+                            Reuniones
+                          </div>
+                          <div className="text-base font-bold text-white">
+                            {fase.metricas.reuniones}
+                          </div>
+                          <div className="absolute -inset-px bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
                       </motion.div>
                     </div>
 
@@ -232,7 +256,7 @@ export default function Proceso() {
                 <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-black p-8"
+                    className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cataliza-bg/40 to-cataliza-bg/20 p-8 border border-cataliza-primary/20"
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${fase.color} opacity-10`} />
                     <div className="relative z-10 h-full flex flex-col items-center justify-center">
@@ -261,7 +285,7 @@ export default function Proceso() {
               {/* Conector */}
               {index < procesoDetallado.length - 1 && (
                 <div className="my-12 flex justify-center">
-                  <div className="w-px h-24 bg-gradient-to-b from-orange-500/50 to-transparent" />
+                  <div className="w-px h-24 bg-gradient-to-b from-cataliza-primary/50 to-transparent" />
                 </div>
               )}
             </motion.div>
@@ -272,7 +296,7 @@ export default function Proceso() {
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-t from-orange-500/20 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -284,7 +308,7 @@ export default function Proceso() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               ¿Listo para tener tu
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}equipo de producto
               </span>
               ?
@@ -297,7 +321,7 @@ export default function Proceso() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+              className="px-8 py-3 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
             >
               Iniciar Proyecto
             </motion.button>

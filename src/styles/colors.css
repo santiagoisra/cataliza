@@ -1,0 +1,47 @@
+:root {
+  --cataliza-bg: #191d23;
+  --cataliza-primary: #4a87c0;
+  --cataliza-secondary: #2f5385;
+}
+
+.bg-cataliza-bg {
+  background-color: var(--cataliza-bg) !important;
+}
+
+.text-cataliza-primary {
+  color: var(--cataliza-primary);
+}
+
+.text-cataliza-secondary {
+  color: var(--cataliza-secondary);
+}
+
+.border-cataliza-primary {
+  border-color: var(--cataliza-primary);
+}
+
+.border-cataliza-secondary {
+  border-color: var(--cataliza-secondary);
+}
+
+.from-cataliza-primary {
+  --tw-gradient-from: var(--cataliza-primary);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(74, 135, 192, 0));
+}
+
+.to-cataliza-secondary {
+  --tw-gradient-to: var(--cataliza-secondary);
+}
+
+.hover\:bg-cataliza-secondary:hover {
+  background-color: var(--cataliza-secondary);
+}
+
+.hover\:shadow-cataliza-primary\/20:hover {
+  --tw-shadow-color: rgba(74, 135, 192, 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.focus\:ring-cataliza-primary:focus {
+  --tw-ring-color: var(--cataliza-primary);
+}

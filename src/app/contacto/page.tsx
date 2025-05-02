@@ -9,13 +9,13 @@ const infoContacto = [
     titulo: "Email",
     descripcion: "contacto@cataliza.ar",
     icono: "📧",
-    color: "from-orange-500 to-red-500"
+    color: "from-cataliza-primary to-cataliza-secondary"
   },
   {
     titulo: "Teléfono",
     descripcion: "+54 (381) 535-9505",
     icono: "📱",
-    color: "from-red-500 to-orange-600"
+    color: "from-cataliza-secondary to-cataliza-primary"
   }
 ];
 
@@ -33,14 +33,14 @@ export default function Contacto() {
   const [error] = useState('');
 
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-cataliza-bg min-h-screen">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-black to-black"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1)_0%,rgba(0,0,0,0)_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,135,192,0.1)_0%,rgba(0,0,0,0)_50%)]"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +52,7 @@ export default function Contacto() {
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Contanos en qué estás y
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}vemos cómo podemos ayudarte
               </span>
             </h1>
@@ -91,7 +91,7 @@ export default function Contacto() {
       {/* Formulario de Contacto */}
       <section className="py-20 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-black to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/10 via-cataliza-bg to-cataliza-bg"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +99,7 @@ export default function Contacto() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gray-900/50 p-8 sm:p-12 rounded-2xl border border-gray-800 backdrop-blur-sm"
+            className="bg-gradient-to-r from-cataliza-bg/40 to-cataliza-bg/20 p-8 sm:p-12 rounded-2xl border border-cataliza-primary/20 backdrop-blur-sm"
           >
             <h2 className="text-2xl font-bold text-white mb-6 text-center">O completá el formulario y te escribimos:</h2>
 
@@ -131,7 +131,7 @@ export default function Contacto() {
                     type="text"
                     name="name"
                     required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                     value={formState.nombre}
                     onChange={(e) => setFormState({...formState, nombre: e.target.value})}
                   />
@@ -149,7 +149,7 @@ export default function Contacto() {
                     type="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                     value={formState.email}
                     onChange={(e) => setFormState({...formState, email: e.target.value})}
                   />
@@ -168,7 +168,7 @@ export default function Contacto() {
                   <input
                     type="text"
                     name="company"
-                    className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                     value={formState.empresa}
                     onChange={(e) => setFormState({...formState, empresa: e.target.value})}
                   />
@@ -187,7 +187,7 @@ export default function Contacto() {
                   required
                   name="message"
                   rows={6}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                   value={formState.mensaje}
                   onChange={(e) => setFormState({...formState, mensaje: e.target.value})}
                 ></textarea>
@@ -197,7 +197,7 @@ export default function Contacto() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+                className="w-full py-4 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
               >
                 Enviar mensaje
               </motion.button>

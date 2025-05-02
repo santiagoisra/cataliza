@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-black" id="contacto">
+    <section className="py-20 bg-cataliza-bg" id="contacto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Contact Info */}
@@ -33,7 +33,7 @@ const Contact = () => {
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               ¿Querés tener tu
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
                 {" "}propio equipo de producto{" "}
               </span>
               ?
@@ -45,7 +45,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center">
                   <span className="text-xl">📧</span>
                 </div>
                 <div>
@@ -55,7 +55,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center">
                   <span className="text-xl">📱</span>
                 </div>
                 <div>
@@ -87,7 +87,7 @@ const Contact = () => {
                   name="name"
                   value={formState.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                   required
                 />
               </div>
@@ -102,7 +102,7 @@ const Contact = () => {
                   name="email"
                   value={formState.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                   required
                 />
               </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                   name="company"
                   value={formState.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                 />
               </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                   value={formState.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                   required
                 ></textarea>
               </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-orange-500/20"
+                className="w-full py-4 bg-gradient-to-r from-cataliza-primary to-cataliza-secondary text-white font-semibold rounded-lg shadow-lg hover:shadow-cataliza-primary/20"
               >
                 Enviar mensaje
               </motion.button>
