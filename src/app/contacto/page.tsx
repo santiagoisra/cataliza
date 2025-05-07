@@ -51,14 +51,11 @@ export default function Contacto() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Contacta con nuestro equipo de
+              Nuestro equipo está listo para
               <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
-                {" "}desarrollo de productos
+                {" "}trabajar junto a vos y alcanzar tu producto
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Nuestro equipo está listo para sumarse al tuyo y construir productos digitales innovadores.
-            </p>
           </motion.div>
         </div>
       </section>

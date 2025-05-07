@@ -36,7 +36,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            En Cataliza acompañamos a empresas y organizaciones en la creación de productos digitales,
+            En Cataliza acompañamos a empresas y organizaciones en la creación de productos,
             como si fuéramos parte de su equipo. Diseñamos, planificamos y construimos de forma colaborativa,
             sumándonos desde afuera... pero trabajando desde adentro.
           </p>

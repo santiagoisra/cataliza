@@ -60,6 +60,74 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             onClick={onClose}
           />
 
+          {/* Equipo flotante izquierda */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            className="fixed left-16 top-[25%] -translate-y-1/2 z-50 hidden lg:block"
+          >
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="relative flex flex-col items-center"
+            >
+              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 backdrop-blur-md border border-cataliza-primary/30 p-4 flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center mb-2">
+                  <span className="text-2xl">👨‍💻</span>
+                </div>
+                <h4 className="text-white font-semibold">Santiago Israelevich</h4>
+                <p className="text-cataliza-primary text-sm">UX/UI Designer</p>
+              </div>
+              <div className="mt-4 bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-lg p-4 max-w-[280px]">
+                <p className="text-gray-400 text-sm">
+                  Especialista en diseño centrado en el usuario, creando experiencias digitales intuitivas y atractivas que conectan con los usuarios y cumplen objetivos de negocio.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Equipo flotante derecha */}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            className="fixed right-16 top-[25%] -translate-y-1/2 z-50 hidden lg:block"
+          >
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="relative flex flex-col items-center"
+            >
+              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 backdrop-blur-md border border-cataliza-primary/30 p-4 flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center mb-2">
+                  <span className="text-2xl">👨‍💻</span>
+                </div>
+                <h4 className="text-white font-semibold">Nicolás Rivera</h4>
+                <p className="text-cataliza-primary text-sm">Product & Development Lead</p>
+              </div>
+              <div className="mt-4 bg-gray-900/50 backdrop-blur-sm border border-cataliza-primary/20 rounded-lg p-4 max-w-[280px]">
+                <p className="text-gray-400 text-sm">
+                  Experto en estrategia de producto y desarrollo, transformando conceptos en soluciones digitales funcionales con enfoque en calidad, escalabilidad y resultados.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+
           {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -72,6 +140,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
+              aria-label="Cerrar modal"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -95,149 +164,242 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 {/* Versión de escritorio - visible solo en pantallas medianas y grandes */}
                 <div className="relative hidden md:block">
                   {/* Línea vertical central */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary"></div>
+                  <motion.div
+                    initial={{ height: 0 }}
+                    whileInView={{ height: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary h-full"
+                  />
 
                   {/* Paso 1 */}
-                  <div className="relative flex items-center mb-16">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="relative flex items-center mb-16"
+                  >
                     {/* Contenido izquierdo */}
-                    <div className="w-1/2 pr-8 text-right">
+                    <div className="w-[calc(50%-3rem)] text-right">
                       <h4 className="text-white font-semibold text-lg">Contacto inicial</h4>
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">1</div>
+                    <div className="w-24 flex justify-center">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4, type: "spring" }}
+                        className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        1
+                      </motion.div>
+                    </div>
 
                     {/* Contenido derecho */}
-                    <div className="w-1/2 pl-8">
+                    <div className="w-[calc(50%-3rem)]">
                       <p className="text-gray-400">Completá el formulario y contanos sobre tu proyecto o idea. Nos pondremos en contacto contigo rápidamente.</p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Paso 2 */}
-                  <div className="relative flex items-center mb-16">
-                    {/* Contenido izquierdo (invertido) */}
-                    <div className="w-1/2 pr-8 text-right">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                    className="relative flex items-center mb-16"
+                  >
+                    {/* Contenido izquierdo */}
+                    <div className="w-[calc(50%-3rem)] text-right">
                       <p className="text-gray-400">Agendamos una reunión para entender en profundidad tus necesidades, objetivos y expectativas.</p>
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">2</div>
+                    <div className="w-24 flex justify-center">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.6, type: "spring" }}
+                        className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        2
+                      </motion.div>
+                    </div>
 
-                    {/* Contenido derecho (invertido) */}
-                    <div className="w-1/2 pl-8">
+                    {/* Contenido derecho */}
+                    <div className="w-[calc(50%-3rem)]">
                       <h4 className="text-white font-semibold text-lg">Reunión de descubrimiento</h4>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Paso 3 */}
-                  <div className="relative flex items-center mb-16">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    className="relative flex items-center mb-16"
+                  >
                     {/* Contenido izquierdo */}
-                    <div className="w-1/2 pr-8 text-right">
+                    <div className="w-[calc(50%-3rem)] text-right">
                       <h4 className="text-white font-semibold text-lg">Propuesta personalizada</h4>
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">3</div>
+                    <div className="w-24 flex justify-center">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.8, type: "spring" }}
+                        className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        3
+                      </motion.div>
+                    </div>
 
                     {/* Contenido derecho */}
-                    <div className="w-1/2 pl-8">
+                    <div className="w-[calc(50%-3rem)]">
                       <p className="text-gray-400">Desarrollamos una propuesta adaptada a tus necesidades específicas con un plan de trabajo claro.</p>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Paso 4 */}
-                  <div className="relative flex items-center">
-                    {/* Contenido izquierdo (invertido) */}
-                    <div className="w-1/2 pr-8 text-right">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8 }}
+                    className="relative flex items-center"
+                  >
+                    {/* Contenido izquierdo */}
+                    <div className="w-[calc(50%-3rem)] text-right">
                       <p className="text-gray-400">Nos integramos a tu equipo y comenzamos a ejecutar el plan, con comunicación constante y entregas regulares.</p>
                     </div>
 
                     {/* Círculo central con número */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">4</div>
+                    <div className="w-24 flex justify-center">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 1, type: "spring" }}
+                        className="w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        4
+                      </motion.div>
+                    </div>
 
-                    {/* Contenido derecho (invertido) */}
-                    <div className="w-1/2 pl-8">
+                    {/* Contenido derecho */}
+                    <div className="w-[calc(50%-3rem)]">
                       <h4 className="text-white font-semibold text-lg">Comenzamos a trabajar</h4>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Versión móvil - visible solo en pantallas pequeñas */}
                 <div className="md:hidden">
                   <div className="relative">
                     {/* Línea vertical izquierda */}
-                    <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary"></div>
+                    <motion.div
+                      initial={{ height: 0 }}
+                      whileInView={{ height: "100%" }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1 }}
+                      className="absolute left-6 top-0 w-0.5 bg-gradient-to-b from-cataliza-primary to-cataliza-secondary"
+                    />
 
                     {/* Paso 1 */}
-                    <div className="relative pl-16 pb-10">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="relative pl-16 pb-10"
+                    >
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">1</div>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, type: "spring" }}
+                        className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        1
+                      </motion.div>
                       <h4 className="text-white font-semibold text-lg mb-2">Contacto inicial</h4>
                       <p className="text-gray-400">Completá el formulario y contanos sobre tu proyecto o idea. Nos pondremos en contacto contigo rápidamente.</p>
-                    </div>
+                    </motion.div>
 
                     {/* Paso 2 */}
-                    <div className="relative pl-16 pb-10">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.4 }}
+                      className="relative pl-16 pb-10"
+                    >
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">2</div>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5, type: "spring" }}
+                        className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        2
+                      </motion.div>
                       <h4 className="text-white font-semibold text-lg mb-2">Reunión de descubrimiento</h4>
                       <p className="text-gray-400">Agendamos una reunión para entender en profundidad tus necesidades, objetivos y expectativas.</p>
-                    </div>
+                    </motion.div>
 
                     {/* Paso 3 */}
-                    <div className="relative pl-16 pb-10">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 }}
+                      className="relative pl-16 pb-10"
+                    >
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">3</div>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7, type: "spring" }}
+                        className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        3
+                      </motion.div>
                       <h4 className="text-white font-semibold text-lg mb-2">Propuesta personalizada</h4>
                       <p className="text-gray-400">Desarrollamos una propuesta adaptada a tus necesidades específicas con un plan de trabajo claro.</p>
-                    </div>
+                    </motion.div>
 
                     {/* Paso 4 */}
-                    <div className="relative pl-16">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.8 }}
+                      className="relative pl-16"
+                    >
                       {/* Círculo con número */}
-                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20">4</div>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.9, type: "spring" }}
+                        className="absolute left-0 top-0 w-12 h-12 rounded-full bg-gradient-to-br from-cataliza-primary to-cataliza-secondary flex items-center justify-center text-white font-bold text-lg z-10 shadow-lg shadow-cataliza-primary/20"
+                      >
+                        4
+                      </motion.div>
                       <h4 className="text-white font-semibold text-lg mb-2">Comenzamos a trabajar</h4>
                       <p className="text-gray-400">Nos integramos a tu equipo y comenzamos a ejecutar el plan, con comunicación constante y entregas regulares.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Equipo */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold text-white mb-4">Nuestro equipo:</h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-cataliza-bg/30 p-4 rounded-xl border border-cataliza-primary/20">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center">
-                        {/* Placeholder para la foto - reemplazar con Image cuando tengas las imágenes */}
-                        <span className="text-2xl">👨‍💻</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold">Santiago Israelevich</h4>
-                        <p className="text-cataliza-primary text-sm">UX/UI Designer</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-400 text-sm">
-                      Especialista en diseño centrado en el usuario, creando experiencias digitales intuitivas y atractivas que conectan con los usuarios y cumplen objetivos de negocio.
-                    </p>
-                  </div>
-
-                  <div className="bg-cataliza-bg/30 p-4 rounded-xl border border-cataliza-primary/20">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cataliza-primary/20 to-cataliza-secondary/20 overflow-hidden flex items-center justify-center">
-                        {/* Placeholder para la foto - reemplazar con Image cuando tengas las imágenes */}
-                        <span className="text-2xl">👨‍💻</span>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-semibold">Nicolás Rivera</h4>
-                        <p className="text-cataliza-primary text-sm">Product & Development Lead</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-400 text-sm">
-                      Experto en estrategia de producto y desarrollo, transformando conceptos en soluciones digitales funcionales con enfoque en calidad, escalabilidad y resultados.
-                    </p>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -269,6 +431,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="text"
                         name="name"
+                        title="Nombre completo"
+                        placeholder="Tu nombre completo"
                         className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.nombre}
                         onChange={(e) => setFormState({...formState, nombre: e.target.value})}
@@ -283,6 +447,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="email"
                         name="email"
+                        title="Email"
+                        placeholder="tu@email.com"
                         className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.email}
                         onChange={(e) => setFormState({...formState, email: e.target.value})}
@@ -299,6 +465,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="text"
                         name="company"
+                        title="Empresa"
+                        placeholder="Nombre de tu empresa (opcional)"
                         className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.empresa}
                         onChange={(e) => setFormState({...formState, empresa: e.target.value})}
@@ -312,6 +480,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                       <input
                         type="tel"
                         name="phone"
+                        title="Teléfono"
+                        placeholder="Tu número de teléfono (opcional)"
                         className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                         value={formState.telefono}
                         onChange={(e) => setFormState({...formState, telefono: e.target.value})}
@@ -326,6 +496,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                     <textarea
                       rows={4}
                       name="message"
+                      title="Mensaje"
+                      placeholder="Contanos sobre tu proyecto o idea"
                       className="w-full px-4 py-3 bg-cataliza-bg/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cataliza-primary focus:border-transparent text-white"
                       value={formState.mensaje}
                       onChange={(e) => setFormState({...formState, mensaje: e.target.value})}

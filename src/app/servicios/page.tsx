@@ -138,14 +138,11 @@ export default function Servicios() {
             className="text-center pb-20"
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Servicios
+              Todo lo que necesitás para
               <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
-                {" "}Profesionales
+                {" "}lanzar o hacer crecer tu producto
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Todo lo que necesitás para lanzar o hacer crecer tu producto digital.
-            </p>
           </motion.div>
         </div>
       </section>

@@ -139,13 +139,10 @@ export default function Proceso() {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Nuestro
               <span className="bg-gradient-to-r from-cataliza-primary to-cataliza-secondary bg-clip-text text-transparent">
-                {" "}Proceso de Desarrollo
+                {" "}Proceso
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Un equipo completo de producto digital, sin tener que armarlo internamente.
-            </p>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mt-4">
               Nos adaptamos a tu ritmo, pero seguimos un proceso claro que nos permite avanzar con foco y resultados medibles.
             </p>
           </motion.div>
