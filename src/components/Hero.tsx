@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 import HeroGeometric from './HeroGeometric';
 
 const heroCopy = {
