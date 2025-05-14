@@ -11,8 +11,8 @@ const heroCopy = {
     'Ya sea que estés empezando una idea o escalando una solución, nuestro equipo está para ayudarte a avanzar con claridad, foco y visión de producto.'
   ],
   actions: [
-    { text: 'Comenzar Proyecto', href: '/contacto', variant: 'primary' },
-    { text: 'Conocer Más', href: '/servicios', variant: 'secondary' }
+    { text: 'Comenzar Proyecto', href: '/contacto', variant: 'primary' as const },
+    { text: 'Conocer Más', href: '/servicios', variant: 'secondary' as const }
   ],
   stats: [
     { number: '100+', label: 'Proyectos Exitosos' },
