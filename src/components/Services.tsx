@@ -51,8 +51,9 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-20 bg-cataliza-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-cataliza-bg relative overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-32 sm:h-48 bg-gradient-to-b from-[#181d23] via-transparent to-transparent pointer-events-none transition-colors duration-700 z-0" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
