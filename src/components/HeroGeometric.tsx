@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 function ElegantShape({
   className,
@@ -71,8 +72,22 @@ const buttonVariants = {
   secondary: 'w-full sm:w-auto px-6 py-3 bg-white/10 text-white font-semibold rounded-lg backdrop-blur-sm hover:bg-white/20 transition',
 };
 
+// Hook para detectar si el viewport es sm o mayor (>= 640px)
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 640px)');
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    setIsDesktop(mq.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isDesktop;
+}
+
 const HeroGeometric = ({ badge, title1, title2, description, actions, stats }: HeroGeometricProps) => {
   const router = useRouter();
+  const isDesktop = useIsDesktop();
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -91,11 +106,11 @@ const HeroGeometric = ({ badge, title1, title2, description, actions, stats }: H
       <div className="absolute inset-0 bg-gradient-to-br from-cataliza-primary/20 via-cataliza-bg to-cataliza-bg blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
-        <ElegantShape delay={0.3} width={320} height={80} rotate={12} gradient="from-indigo-500/[0.15]" className="left-[-20%] sm:left-[-10%] top-[10%] sm:top-[15%]" />
-        <ElegantShape delay={0.5} width={220} height={60} rotate={-15} gradient="from-rose-500/[0.15]" className="right-[-10%] sm:right-[-5%] top-[70%] sm:top-[75%]" />
-        <ElegantShape delay={0.4} width={140} height={40} rotate={-8} gradient="from-violet-500/[0.15]" className="left-[2%] sm:left-[10%] bottom-[2%] sm:bottom-[10%]" />
-        <ElegantShape delay={0.6} width={100} height={30} rotate={20} gradient="from-amber-500/[0.15]" className="right-[10%] sm:right-[20%] top-[5%] sm:top-[15%]" />
-        <ElegantShape delay={0.7} width={80} height={20} rotate={-25} gradient="from-cyan-500/[0.15]" className="left-[10%] sm:left-[25%] top-[2%] sm:top-[10%]" />
+        <ElegantShape delay={0.3} width={isDesktop ? 700 : 320} height={isDesktop ? 200 : 80} rotate={12} gradient="from-indigo-500/[0.15]" className="left-[-20%] sm:left-[-10%] top-[10%] sm:top-[15%]" />
+        <ElegantShape delay={0.5} width={isDesktop ? 500 : 220} height={isDesktop ? 140 : 60} rotate={-15} gradient="from-rose-500/[0.15]" className="right-[-10%] sm:right-[-5%] top-[70%] sm:top-[75%]" />
+        <ElegantShape delay={0.4} width={isDesktop ? 350 : 140} height={isDesktop ? 100 : 40} rotate={-8} gradient="from-violet-500/[0.15]" className="left-[2%] sm:left-[10%] bottom-[2%] sm:bottom-[10%]" />
+        <ElegantShape delay={0.6} width={isDesktop ? 220 : 100} height={isDesktop ? 70 : 30} rotate={20} gradient="from-amber-500/[0.15]" className="right-[10%] sm:right-[20%] top-[5%] sm:top-[15%]" />
+        <ElegantShape delay={0.7} width={isDesktop ? 180 : 80} height={isDesktop ? 50 : 20} rotate={-25} gradient="from-cyan-500/[0.15]" className="left-[10%] sm:left-[25%] top-[2%] sm:top-[10%]" />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6">
